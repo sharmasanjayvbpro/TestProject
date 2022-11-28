@@ -1,0 +1,2 @@
+2022-11-28 19:40:25.3519|ERROR|TestProject.Areas.Profile.Controllers.ProfileDetailsController|Please Enter Mandatory Fields
+2022-11-28 19:40:38.1906|ERROR|TestProject.Areas.Profile.Controllers.ProfileDetailsController|Please Enter Mandatory Fields

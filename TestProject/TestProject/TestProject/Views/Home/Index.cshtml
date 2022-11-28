@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Job Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="parent_div">
+    
+    <div class="child_div">
+        <h3>Welcome to Bid One</h3>
+        @Html.ActionLink("Click To Proceed", "Index", "ProfileDetails", new { area = "profile" }, new { @class = "btn btn-primary" })
+    </div>
+</div>

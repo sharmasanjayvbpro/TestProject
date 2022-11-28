@@ -1,0 +1,50 @@
+﻿@model @TestProject.Areas.Profile.Models.ProfileEntity
+@{
+    ViewBag.Title = "Profile Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "ProfileDetails", FormMethod.Post))
+{
+    <div class="parent_div">
+        <div class="child_div">
+
+           <div class="content">
+                <div class="form-group">
+                    <label>First Name</label>
+                    @Html.TextBoxFor(model => model.firstName, new { id = "txtFirstName", name = "FirstName", @class = "form-control", @type = "Text", @placeholder = "First Name" })
+                    @Html.ValidationMessageFor(model => model.firstName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    @Html.TextBoxFor(model => model.lastName, new { id = "txtLastName", name = "LastName", @class = "form-control", @type = "Text", @placeholder = "Last Name" })
+                    @Html.ValidationMessageFor(model => model.lastName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <button type="submit" class="btn mr-2" name="btnSaveDetails">Save Details</button>
+                    <button type="reset" class="btn btn-Resetp" name="btnReset" formnovalidate="formnovalidate">Reset</button>
+                </div>
+            </div>
+           
+
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/toastr")
+    @Styles.Render("~/bundles/toastr-css")
+
+    <script>
+     if ("@ViewBag.ErrorMessage" != "" && "@ViewBag.ErrorMessage" != null) {
+        toastr.error("@ViewBag.ErrorMessage");
+        }
+     else if ("@ViewBag.SuccessMessage" != "" && "@ViewBag.SuccessMessage" != null) {
+         toastr.success("@ViewBag.SuccessMessage");
+
+    }
+    </script>
+}
+
+
